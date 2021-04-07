@@ -29,7 +29,7 @@ const ReactModal: React.FC<Props> = ({ showModal, setModal }) => {
   const [alert, setAlert] = useState<boolean>(false)
   const { appData, setAppData } = useContext(AppContext)
 
-  const handleChange = (e: React.BaseSyntheticEvent) =>
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm({ ...form, [e.target.name]: e.target.value })
 
   const handleSubmit = () => {

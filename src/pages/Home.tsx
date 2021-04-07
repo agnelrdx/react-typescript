@@ -13,7 +13,7 @@ const Home: React.FC = () => {
   const [login, setLogin] = useState<ILogin>({ email: '', password: '' })
   const [alert, setAlert] = useState<boolean>(false)
 
-  const handleSubmit = (e: React.BaseSyntheticEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (
       process.env.REACT_APP_VALID_USERNAME !== login.email ||
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
     history.push('/dashboard/home')
   }
 
-  const handleChange = (e: React.BaseSyntheticEvent) =>
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setLogin({ ...login, [e.target.name]: e.target.value })
 
   return (
